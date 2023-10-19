@@ -2,6 +2,9 @@ import { Image, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, Vie
 import Ionicons from "@expo/vector-icons/Ionicons"
 import Colors from "@/constants/Colors";
 import { Link } from "expo-router";
+import { BottomSheet } from "./BottomSheet";
+import { useRef } from "react";
+import { BottomSheetModal } from "@gorhom/bottom-sheet";
 
 function SearchBar() {
   return (
@@ -12,7 +15,7 @@ function SearchBar() {
         <TextInput placeholder="Restaurants, Groceries and dishes" style={styles.input} />
       </View>
 
-      <Link href={"/"}>
+      <Link href={"/(modal)/filter"} asChild>
       <TouchableOpacity style={styles.optionButton}>
           <Ionicons name="options-outline" size={20} color={Colors.primary} />
         </TouchableOpacity>
@@ -22,14 +25,24 @@ function SearchBar() {
 }
 
 export function CustomHeader() {
+  const bottomSheetRef = useRef<BottomSheetModal>(null);
+
+  const openModal = () => {
+    bottomSheetRef.current?.present();
+  }
+
   return (
     <SafeAreaView style={styles.safeArea}>
+      <BottomSheet ref={bottomSheetRef} />
       <View style={styles.container}>
         <TouchableOpacity>
           <Image source={require("@/assets/images/bike.png")} style={styles.bike} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.titleContainer}>
+        <TouchableOpacity
+          onPress={openModal}
+          style={styles.titleContainer}
+        >
           <Text style={styles.title}>Delivery - now</Text>
           <View style={styles.locationName}>
             <Text style={styles.subtitle}>London</Text>
@@ -37,7 +50,10 @@ export function CustomHeader() {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.profileButton}>
+        <TouchableOpacity
+          onPress={openModal}
+          style={styles.profileButton}
+        >
           <Ionicons name="person-outline" size={20} color={Colors.primary} />
         </TouchableOpacity>
       </View>
