@@ -3,6 +3,7 @@
 ## Sobre o projeto
 
 Deliveroo é um projeto React Native Expo que simula um aplicativo de compras. É um projeto em que utiliza varias tecnologias diferentes para que o usuário tenha uma boa experiência na utilização.
+
 O app simula um sistema de filtragem de produtos além de integração com oa API do Google Maps para geolocalização.
 
 <div align="center">
@@ -47,3 +48,7 @@ $ npm install
 # Instale as dependências
 $ npx expo start
 ```
+
+## Agradecimentos
+
+Esse projeto foi construído a partir das aulas do **Simon Grimm** do canal **@galaxies_dev no youtube**.
