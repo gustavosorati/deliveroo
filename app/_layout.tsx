@@ -26,6 +26,22 @@ export default function RootLayoutNav() {
         />
 
         <Stack.Screen
+          name="basket"
+          options={{
+            headerTitle: "Basekt",
+            headerLeft: () => (
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.goBack();
+                }}
+              >
+                <Ionicons name="arrow-back" size={28} color={Colors.primary} />
+              </TouchableOpacity>
+            ),
+          }}
+        />
+
+        <Stack.Screen
           name="(modal)/filter"
           options={{
             presentation: 'modal',
@@ -38,7 +54,45 @@ export default function RootLayoutNav() {
               <TouchableOpacity
                 onPress={() => {
                   navigation.goBack();
-                }}>
+                }}
+              >
+                <Ionicons name="close-outline" size={28} color={Colors.primary} />
+              </TouchableOpacity>
+            ),
+          }}
+        />
+
+        <Stack.Screen
+          name="(modal)/location-search"
+          options={{
+            presentation: 'fullScreenModal',
+            headerTitle: 'Select Location',
+            headerLeft: () => (
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.goBack();
+                }}
+              >
+                <Ionicons name="close-outline" size={28} color={Colors.primary} />
+              </TouchableOpacity>
+            ),
+          }}
+        />
+
+        <Stack.Screen
+          name="(modal)/dish"
+          options={{
+            presentation: 'modal',
+            headerTitle: '',
+            headerTransparent: true,
+            headerLeft: () => (
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.goBack();
+                }}
+                style={{ backgroundColor: "#fff", borderRadius: 99, padding: 8, alignItems: "center" }}
+
+              >
                 <Ionicons name="close-outline" size={28} color={Colors.primary} />
               </TouchableOpacity>
             ),
