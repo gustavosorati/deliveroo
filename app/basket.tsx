@@ -43,7 +43,7 @@ export default function Basket() {
 
                   <View style={styles.totalRow}>
                     <Text style={styles.total}>Subtotal</Text>
-                    <Text style={{ fontSize: 18 }}>${total}</Text>
+                    <Text style={{ fontSize: 18 }}>${total.toFixed(2)}</Text>
                   </View>
 
                   <View style={{ height: 1, backgroundColor: Colors.grey }} />

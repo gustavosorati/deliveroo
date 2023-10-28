@@ -171,7 +171,7 @@ export default function Details() {
                 <TouchableOpacity style={styles.fullButton}>
                   <Text style={styles.basket}>{items}</Text>
                   <Text style={styles.footerText}>View Basket</Text>
-                  <Text style={{ fontSize: 16, fontWeight: "bold" }}>Total: ${total}</Text>
+                  <Text style={{ fontSize: 16, fontWeight: "bold" }}>Total: ${total.toFixed(2)}</Text>
                 </TouchableOpacity>
               </Link>
           </SafeAreaView>
